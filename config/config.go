@@ -11,7 +11,7 @@ type Config struct {
 func NewConfig(path string) *Config {
 	c := new(Config)
 
-	if file, err := os.Open(path); err == nil {
+	if file, err := os.Open(path); err != nil {
 		panic(err)
 	} else {
 		defer file.Close()
